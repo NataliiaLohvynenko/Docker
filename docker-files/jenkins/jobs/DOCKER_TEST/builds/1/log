@@ -1,0 +1,8 @@
+Started by user [8mha:////4CbUvv2VNu72Fh4YYFCPfyuk+gIvAhP6B29nvX681ySKAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyOEgY+/dLi1CL9nPyMssq81DwAXyzZjcMAAAA=[0mNataliia
+Running as SYSTEM
+Building remotely on [8mha:////4HRbQzAyTWOT2+axsA2pxysQxuunqaeNUzGGoRv9HDu0AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZB/eT83ILSktQifZf85OzUIkMANisTM8YAAAA=[0mDocker1 in workspace D:\education\docker\jenkins\workspace\DOCKER_TEST
+[DOCKER_TEST] $ sh -xe C:\Users\666\AppData\Local\Temp\jenkins15962751267851232482.sh
++ docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                              NAMES
+a7f5ae2f5ed3        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   About an hour ago   Up About an hour    0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   distracted_maxwell
+Finished: SUCCESS

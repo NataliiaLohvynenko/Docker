@@ -1,0 +1,119 @@
+docker images
+docker system prune
+docker ps -a
+-d -in background
+docker rm
+-v -sharefiles
+-p --port maping
+-start/stop
+network create 
+
+docker notepad Dockerfile
+
+docker run  -it --entrypoint=/bin/sh lohvynen/squares
+
+docker logs eloquent_montalcini
+
+docker tag lohvynen/squares:latest lohvynen/squares:release
+
+docker push lohvynen/squares
+
+docker notepad Tes.java
+javac Test.java
+java Test
+
+#------------------------------#
+#Create Image and Compile java #
+#------------------------------#
+
+docker run -it alpine
+apk add openjdk8 --install jdk
+find / -name javac
+echo $PATH
+export PATH=$PATH:/usr/lib/jvm/java-1.8-openjdk/bin -- add environmetal vars
+-----------------------------------------------------------------------
+
+create file to build from(Dockerfile)
+ADD Test.java Test.java - what and where
+
+ENTRYPOINT javac Test.java && java Test 5 --- compile and excecute Test(excecute Test.class)
+
+ docker build -t=lohvynen/hello-world .
+
+
+docker run -e VAR=5 lohvynen/squares
+
+
+#------------------------------#
+#Docker-compose                #
+#------------------------------#
+docker-compose up
+docker-compose down
+
+ working_dir: /a/b/c
+    entrypoint: "wget nginx" ------call the page and download file
+    volumes: ----------map files
+   #   - $(pwd):/a/b/c 
+    
+
+      -D:\education\docker:a/b/c ---------map files (add from a/b/c to D:\education\docker:a/b/c)
+     
+
+
+#-------------------------------#
+#Docker-compose Selenuim network#
+#-------------------------------#
+
+docker pull selenium/hub:3.14
+docker pull selenium/node-firefox:3.14
+ docker pull selenium/node-chrome:3.14
+
+yaml file
+
+docker-compose up -d --scale chrome=4
+
+
+#-------------------------------#
+#Prepare jars for docker        #
+#-------------------------------#
+
+Project location!!
+
+mvn clean package -DskipTests
+
+
+cd target
+java -cp selenium-docker.jar;selenium-docker-tests.jar;libs\* org.testng.TestNG ..\search-module.xml
+
+java -cp selenium-docker.jar;selenium-docker-tests.jar;libs\* -DBROWSER=firefox org.testng.TestNG ..\book-flight-module.xml
+
+create Docker file under project location
+
+docker build -t=lohvynen/selenium-docker .
+
+docker run -it --entrypoint=/bin/sh -v D:/education/Git/projects/dockerTest/output:/usr/share/udemy/test-output lohvynen/selenium-docker
+
+java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* org.testng.TestNG book-flight-module.xml
+-------------------------------------------------------------------
+
+docker run -it --enrtypoint=/bin/sh lohvynen/selenium-docker
+
+
+docker run -e HUB_HOST=192.168.1.21 -e MODULE=book-flight-module.xml  -v D:/education/Git/projects/dockerTest/output:/usr/share/udemy/test-output lohvynen/selenium-docker
+
+-----------------------------------------------------------------
+
+docker-compose for all infrastructure
+------------------------------------
+
+docker-compose up | grep -e 'search-module' -e 'book-flight-module'
+
+#-------------------------------#
+#Jenkins                        #
+#-------------------------------#
+
+ docker pull jenkins/jenkins:lts
+docker pull maven:3-alpine
+
+8acf1282b2644fb99fbf260ea3312a7d
+docker run -p 8080:8080 -p 50000:50000 -v "$PWD/jenkins:/var/jenkins_home" jenkins/jenkins:lts

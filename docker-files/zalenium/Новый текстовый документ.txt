@@ -1,0 +1,16 @@
+Pull these 2 images first.
+
+docker pull elgalu/selenium
+ 
+docker pull dosel/zalenium
+
+$Env:COMPOSE_CONVERT_WINDOWS_PATHS=1
+
+docker run --rm -ti --name zalenium -d -p 4444:4444 -p 5555:5555 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/seluser/videos dosel/zalenium start --desiredContainers 4 
+
+
+http://localhost:4444/grid/admin/live
+
+
+
+docker stop zalenium
