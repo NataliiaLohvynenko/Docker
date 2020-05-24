@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                bat "docker build -t='lohvynen/selenium-docker' ."
+                bat "docker build -t=lohvynen/selenium-docker ."
             }
         }
         stage('Push Image') {
